@@ -28,7 +28,7 @@ public class ImpostoServiceTest {
 
     @BeforeEach
     public void setUp() {
-        imposto = new Imposto("3", "ICMS", "Imposto sobre Circulação de Mercadorias e Serviços", 18.0);
+        imposto = new Imposto( "ICMS", "Imposto sobre Circulação de Mercadorias e Serviços", 18.0); // Eu estava gerando um id com UUID automaticamente então, eu não precisava por o id no construtor e chamar ele aqui no objeto, era oque estava fazendo o teste não passar....
     }
 
     @Test
