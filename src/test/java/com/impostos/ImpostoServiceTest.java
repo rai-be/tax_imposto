@@ -14,11 +14,14 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@ExtendWith(MockitoExtension.class)
-// O @SpringBootTest cria uma instância completa do Spring Boot, o que significa que tudo, incluindo os beans e o contexto da aplicação, é carregado.
-public class ImpostoServiceTest {
 
-    @Mock
+    // ExtendWith insere dependencias automaticamente, sem eu precisar fazer manualmente
+    @ExtendWith(MockitoExtension.class)
+
+    // O @SpringBootTest cria uma instância completa do Spring Boot, o que significa que tudo, incluindo os beans e o contexto da aplicação, é carregado.
+    public class ImpostoServiceTest {
+
+    @Mock // O @Mock cria um objeto simulado (mock) que pode ser utilizado para testar funcionalidades sem interagir com dependências reais.
     private ImpostoRepository impostoRepository; // Mockando o repositório
 
     @InjectMocks
