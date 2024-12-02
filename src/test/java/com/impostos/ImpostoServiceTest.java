@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.sql.SQLOutput;
 import java.util.Optional;
 
 
@@ -44,6 +45,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
         assertNotNull(resultado);
         assertEquals("ICMS", resultado.getNome());
         Mockito.verify(impostoRepository, Mockito.times(1)).save(imposto);
+        System.out.println("Teste 'testCadastrarTipoImposto' passou!");
     }
 
     @Test
@@ -56,6 +58,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
         assertEquals(180.0, valorImposto);
 
         Mockito.verify(impostoRepository, Mockito.times(1)).findById(imposto.getId());
+        System.out.println("Teste 'testCalcularImposto' passou!");
     }
 
     @Test
@@ -66,6 +69,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
         assertNotNull(resultado);
         assertEquals("ICMS", resultado.getNome());
+        System.out.println("Teste 'testBuscarImpostoPorId' passou!");
     }
 
     @Test
@@ -77,6 +81,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
         Mockito.verify(impostoRepository, Mockito.times(1)).findById(imposto.getId());
         Mockito.verify(impostoRepository, Mockito.times(1)).deleteById(imposto.getId());
+        System.out.println("Teste 'testExcluirImposto' passou!");
 
     }
 }
